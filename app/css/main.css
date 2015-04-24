@@ -1,4 +1,82 @@
-.test{
-    font-size: 16px;
-    font-weight: bold;
+body{
+    background-color: #f7f7f7;
+}
+.content-main,
+.content-sidebar{
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+.content-main{
+    height: 500px;
+}
+.content-sidebar{
+    height: 200px;
+    margin-left: -15px;
+}
+
+/***排序***/
+.sort-tabs{
+    position: relative;
+    min-height: 63px;
+    padding: 30px 20px 0;
+    border-color: #e5e5e5;
+}
+.sort-tabs>li{
+    float: right;
+}
+.sort-tabs>li>a{
+    line-height:30px;
+    padding:0 13px;
+    border:none;
+    color: #666;
+}
+.sort-tabs>li>a:hover{
+    border: none;
+    border-bottom: 2px solid;
+    background-color: #fff;
+    color: #333;
+}
+.sort-tabs>li.active a{
+    border: none;
+    font-weight:bold;
+    border-bottom: 2px solid;
+    color: #333;
+}
+.sort-tabs>li.active a:hover, 
+.sort-tabs>li.active a:focus,
+.sort-tabs>li>a:focus{
+    border: none;
+    border-bottom: 2px solid;
+    background-color: #fff
+}
+.sort-tabs h2{
+    position:absolute;
+    top:16px;
+    left:20px;
+    margin:0;
+    font-size:20px
+}
+.game-list>ul li{
+    list-style: none;
+    border-bottom: 1px dashed #d9d9d9;
+}
+.game-info-icon{
+    float: left;
+}
+.game-info-icon img{
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+}
+
+
+
+.mr-10{
+    margin-right: 10px;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 990px;
+  }
 }

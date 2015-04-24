@@ -20,6 +20,6 @@ app.use('/', webRouter);
 app.use('/api', apiRouter);
 
 // 服务器启动
- app.listen(8080, function(){
-    console.log('HTTP Server is running at port 8080.');
+ app.listen(3000, function(){
+    console.log('HTTP Server is running at port 3000.');
  });
