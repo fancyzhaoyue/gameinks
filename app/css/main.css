@@ -57,20 +57,31 @@ body{
     margin:0;
     font-size:20px
 }
-.game-list>ul li{
+
+
+.game-list ul li{
+    overflow: hidden;
     list-style: none;
-    border-bottom: 1px dashed #d9d9d9;
+    border-bottom: 1px dashed #e5e5e5;
 }
-.game-info-icon{
+
+.game-icon{
     float: left;
+    margin: 15px;
 }
-.game-info-icon img{
+.game-icon img{
     width: 65px;
     height: 65px;
-    border-radius: 10px;
 }
 
-
+.game-info
+{
+    float: left;
+}
+.game-fn{
+    float: right;  
+    margin: 30px;
+}
 
 .mr-10{
     margin-right: 10px;
