@@ -7,9 +7,6 @@ body{
     border: 1px solid #e5e5e5;
     border-radius: 5px;
 }
-.content-main{
-    height: 500px;
-}
 .content-sidebar{
     height: 200px;
     margin-left: -15px;
