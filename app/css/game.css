@@ -1,10 +1,13 @@
-
+/****
+    ********主页*****************
+*****/
 .game-icon{
     width: 65px !important;
     height: 65px !important;
     border-radius: 10px;
 }
 .game-title{
+    margin: 0;
     font-size: 14px;
 }
 
@@ -33,7 +36,53 @@
     background-color: #fff;
 
 }
-
+/********************************
+************排行*****************
+********************************/
 .am-tabs-bd{
     border: none;
+}
+
+/********************************
+************分类*****************
+********************************/
+.category-item{
+    position: relative;
+}
+.category-item img{
+    border-radius: 10px;
+}
+.category-item .title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2px 0;
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+}
+
+/********************************
+************分类*****************
+********************************/
+.login3rd{
+    margin: 30px auto 0 auto;
+    text-align: center;
+    font-size: 14px;
+}
+.login3rd .am-icon-btn{
+    margin: 10px;
+}
+.login3rd h4{
+    border-top: 1px solid #e6e6e6;
+}
+.login3rd h4 span{
+    display: inline-block;
+    color: #999;
+    margin-top: -10px;
+    padding: 0 10px;
+    vertical-align: top;
+    background-color: #fff;
 }
