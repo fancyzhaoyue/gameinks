@@ -1,6 +1,6 @@
-/****
-    ********主页*****************
-*****/
+/********************************
+************主页*****************
+********************************/
 .game-icon{
     width: 65px !important;
     height: 65px !important;
@@ -17,10 +17,10 @@
 .am-icon-star5:before{
     content: "\f005\f005\f005\f005\f005";
 }
-/*轮播 高度调整*/
+/*轮播 高度调整
 .am-slider .am-slides img{
     height: 120px;
-}
+}*/
 
 .am-gallery-title{
     text-align: center;
@@ -65,7 +65,7 @@
 }
 
 /********************************
-************分类*****************
+************用户*****************
 ********************************/
 .login3rd{
     margin: 30px auto 0 auto;
@@ -85,4 +85,17 @@
     padding: 0 10px;
     vertical-align: top;
     background-color: #fff;
+}
+/********************************
+************用户*****************
+********************************/
+.gameinfo{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.gameinfo-detail{
+
+}
+.gameinfo-detail-capture{
+    
 }
