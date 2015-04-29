@@ -1,0 +1,10 @@
+<ul class="am-gallery am-avg-sm-2 am-gallery-default">
+    <li ng-repeat="item in items">
+        <div class="am-gallery-item category-item">
+          <a ng-href="/rank/{{item.id}}">
+            <img ng-src="{{item.imgUrl}}">
+            <span class="title">{{item.name}}</span>
+          </a>
+        </div>
+    </li>
+</ul>

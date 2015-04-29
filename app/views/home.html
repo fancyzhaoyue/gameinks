@@ -1,4 +1,4 @@
-<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+<div data-am-widget="slider" class="am-slider am-slider-a1 am-slider-manual">
     <ul class="am-slides">
         <li>
           <img src="http://s.cn.bing.net/az/hprichbg/rb/TheLuxorHotel_ZH-CN12121725266_1920x1080.jpg">
@@ -14,15 +14,33 @@
         </li>
     </ul>
 </div>
+<div  class="am-list-news am-list-news-default">
+    <div class="am-list-news-hd am-cf">
+        <a href="###" class=""><h2>猜你喜欢</h2><span class="am-list-news-more am-fr"><i class="am-icon-refresh"></i> 换一换 </span></a>
+    </div>
+    <div class="am-list-news-bd">
+        <ul  class="am-gallery am-avg-sm-4 am-avg-md-4 am-gallery-default">
+            <li ng-repeat="game in games">
+                <div class="am-gallery-item">
+                    <a ng-href="{{game.gameUrl}}">
+                        <img class="game-icon" ng-src="{{game.iconUrl}}">
+                        <h3 class="am-gallery-title">{{game.title}}</h3>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <div class="am-list-news am-list-news-default">
     <div class="am-list-news-hd am-cf">
         <a href="###" class=""><h2>精品游戏</h2><span class="am-list-news-more am-fr">更多 &raquo;</span></a>
     </div>
-    <div class="am-list-news-bd">
+    <div class="am-list-news-bd" style="padding:0 10px;">
         <ul class="am-list">
-            <li class="am-g am-list-item-desced  am-list-item-thumb-left" ng-repeat="game in games">
+            <li class="am-g am-list-item-desced am-list-item-thumb-left" ng-repeat="game in games">
                 <div class="am-u-sm-3 am-list-thumb">
-                    <a href="{{game.gameUrl}}">
+                    <a ng-href="{{game.gameUrl}}">
                         <img class="game-icon" ng-src="{{game.iconUrl}}">
                     </a>
                 </div>
