@@ -1,212 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>gameinks</title>
+    <title>墨水游戏</title>
 
     <meta charset="utf-8">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <link rel="icon" type="image/png" href="lib/amazeui/i/favicon.png">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="墨水游戏"/>
+    <link rel="apple-touch-icon-precomposed" href="lib/amazeui/i/app-icon72x72@2x.png">
     
-    <link rel="stylesheet"  href="lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="lib/amazeui/css/amazeui.min.css">
+    <link rel="stylesheet" href="css/game.css">
+    <base href="/">
 </head>
-<body>
-
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">Gameinks</a>
-                </div>
-                <div class="collapse navbar-collapse" id="header-menu">
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="搜索资讯或游戏">
-                        </div>
-                    </form>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">游戏</a></li>
-                        <li><a href="#">资讯</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><button type="button" class="btn btn-primary navbar-btn mr-10">登 录</button></li>
-                        <li><button type="button" class="btn btn-success navbar-btn">注 册</button></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-
-    <div id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-9">
-                    <div class="content-main">
-                        <ul class="nav nav-tabs sort-tabs">
-                            <li><a href="">最新上架</a></li>
-                            <li><a href="">综合评分</a></li>
-                            <li class="active"><a href="">热门推荐</a></li>
-                        </ul>
-                        <div class="game-list">
-                            <ul>
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-
-                                <li>
-                                    <div class="game-icon">
-                                        <a href=""><img src="img/gameicon.jpg"></a>
-                                    </div>
-                                    <div class="game-info">
-                                        <h4><a href="">天天猜成语</a></h4>
-                                        <p>天天猜成语天天猜成语天天猜成语天天猜成语天天猜成语</p>
-                                        <div class="meta">
-                                            <span>时间:2015-04-25</span>
-                                            <span>分类:益智</span>
-                                            <span>人气:10000</span>
-                                        </div>
-                                    </div>
-                                    <div class="game-fn">
-                                        <button type="button" class="btn btn-success">开 始</button>
-                                    </div>
-
-                                </li>
-                                
-                            </ul>
-                            <div class="page-control"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 hidden-sm hidden-xs">
-                    <div class="content-sidebar">
-                        分类
-                    </div>
-                    <div class="content-sidebar">
-                        游戏排行榜
-                    </div>
-                </div>
-            </div>
+<body ng-controller="index_ctrl" ng-cloak>
+    <!-- 头部 开始 -->
+    <header class="am-header am-header-default">
+        <h1 class="am-header-title">
+            <a href="#title-link" class="">{{global.title}}</a>
+        </h1>
+        <div class="am-header-right am-header-nav">
+            <a href="#right-link" class="">
+                <i class="am-header-icon am-icon-search"></i>
+            </a>
         </div>
+    </header>
+    <!-- 头部 结束 -->
+
+    <!-- view 开始 -->
+    <div ng-view></div>
+    <!-- view 结束 -->
+
+    <!-- 底部导航 开始 -->
+     <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default ">
+        <ul class="am-navbar-nav am-cf am-avg-sm-4">
+            <li>
+                <a href="/" class="">
+                    <span class="am-icon-home"></span>
+                    <span class="am-navbar-label">主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/rank" class="">
+                    <span class="am-icon-list-ol"></span>
+                    <span class="am-navbar-label">排行</span>
+                </a>
+            </li>
+            <li>
+                <a href="/category" class="">
+                    <span class="am-icon-th-large"></span>
+                    <span class="am-navbar-label">分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="/user" class="">
+                    <span class="am-icon-user"></span>
+                    <span class="am-navbar-label">我</span>
+                </a>
+            </li>           
+        </ul>
     </div>
-    <footer></footer>
+    <!-- 底部导航 结束 -->
+    <script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/amazeui/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-route.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script TYPE="text/javascript">
+        angular.element(document).ready(function() {
+            initOuterApp();
+            angular.bootstrap(document, ['vx']);
+        });
+    </script>
 </body>
 </html>
