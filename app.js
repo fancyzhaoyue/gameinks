@@ -6,11 +6,12 @@
 var config = require('./config');
 var path = require('path');
 var express = require('express');
+require('./models');
 var webRouter = require('./routes/webRouter');
 var apiRouter = require('./routes/apiRouter');
 
- var app = express();
- app.locals.title = 'My App';
+
+var app = express();
 
 // 静态文件目录
 app.use(express.static(path.join(__dirname, 'app')));
