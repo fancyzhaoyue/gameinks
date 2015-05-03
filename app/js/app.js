@@ -2,14 +2,14 @@
     angular.module('vx.controller', []).controller('homeCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
         $rootScope.global.title = '墨水游戏';
         $rootScope.global.hasGoback = false;
-        $rootScope.getData('/data/games.json', function(data){
+        $scope.get2SVR('/api/games', function(data){
             $scope.games = data;
         });
         $('.am-slider-manual').flexslider();
     }]).controller('gameDetailCtrl', ['$rootScope', '$scope', '$routeParams', function($rootScope, $scope, $routeParams){
         $rootScope.global.title = '墨水游戏';
         $rootScope.global.hasGoback = true;
-        $rootScope.getData('/data/games.json', function(data){
+        $rootScope.get2SVR('/data/games.json', function(data){
             data.forEach(function(game){
                 if(game.id = $routeParams.id){
                     $scope.game = game;
@@ -23,7 +23,7 @@
         $scope.current_tab = 'hot';
         $rootScope.global.title = '排行';
         $rootScope.global.hasGoback = true;
-        $rootScope.getData('/data/games.json', function(data){
+        $rootScope.get2SVR('/data/games.json', function(data){
             $scope.games = data;
         });
         $scope.changeTab = function(tabName){
@@ -32,20 +32,16 @@
     }]).controller('cateCtrl', ['$rootScope', '$scope', function($rootScope, $scope){
         $rootScope.global.title = '分类';
         $rootScope.global.hasGoback = true;
-        $rootScope.getData('/data/category.json', function(data){
+        $rootScope.get2SVR('/data/category.json', function(data){
             $scope.items = data;
         });
-    }]);
-}(),function(){
-    angular.module('vx.service', []).factory('data', ['$http', function($http){
-        return null;
     }]);
 }();
 
 var initOuterApp = function(){
     var vx = window.vx || {};
     vx.version = '0.0.1';
-    var modules = ['ngRoute', 'vx.controller', 'vx.service'];
+    var modules = ['ngRoute', 'vx.controller'];
     vx.ng = angular.module('vx', modules).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
         $routeProvider.when('/',{
             templateUrl:'/views/home.html',
@@ -66,8 +62,9 @@ var initOuterApp = function(){
             redirectTo: '/'
         });
         $locationProvider.html5Mode(true);
-    }]).run(['$rootScope', '$http', 'data', function($rootScope, $http, data){
-        vx.data = data;
+    }]).run(['$rootScope', '$http', function($rootScope, $http){
+
+        // global
         $rootScope.global = {
             config: 'config',
             title: '',
@@ -76,12 +73,22 @@ var initOuterApp = function(){
             hasGoback: false
         };
 
-        $rootScope.getData = function(url, callaback, failback){
+        // API get
+        $rootScope.get2SVR = function(url, callback, failback){
             $http.get(url).success(function(data ,status, headers, config){
-                callaback(data, status, headers, config);
+                angular.isFunction(callback) && callback(data);
             }).error(function(data ,status, headers, config){
-                failback(data, status, headers, config);
+                angular.isFunction(failback) && failback(data);
             })
         };
+
+        // API post
+        $rootScope.post2SVR = function(url, postData, callback, failback){
+            $http.post(url, postData).success(function(data ,status, headers, config){
+                angular.isFunction(callback) && callback(data);
+            }).error(function(data ,status, headers, config){
+                angular.isFunction(failback) && failback(data);
+            })
+        }
     }])
 };
