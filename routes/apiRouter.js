@@ -8,11 +8,6 @@ var gameCtrl = require('../controllers/game');
 
 var router = express.Router();
 
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
-});
-
 router.get('/', function(req, res){ res.send('<h1>Gameinks API</h1>'); });
 
 // 游戏
@@ -27,9 +22,21 @@ router.route('/games/:gameId')
 
 router.param('gameId', gameCtrl.gameById);
 
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
+// 正常返回
+router.use(function(req, res, next) {
+    res.send({
+        retcode: 200,
+        data: res.locals.data
+    });
 });
+
+// 错误处理
+router.use(function(err, req, res, next){
+    console.error('server 500 error:', err);
+    res.send({
+        retcode: 500,
+        errmsg: '服务器错误'
+    });
+})
 
 module.exports = router;

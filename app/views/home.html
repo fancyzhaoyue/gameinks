@@ -22,7 +22,7 @@
         <ul  class="am-gallery am-avg-sm-4 am-avg-md-4 am-gallery-default">
             <li ng-repeat="game in games">
                 <div class="am-gallery-item">
-                    <a ng-href="/game/{{game.id}}">
+                    <a ng-href="/game/{{game._id}}">
                         <img class="game-icon" ng-src="{{game.icon}}">
                         <h3 class="am-gallery-title">{{game.name}}</h3>
                     </a>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="am-u-sm-7 am-list-main">
                     <h3 class="am-list-item-hd game-title">
-                        <a ng-href="/game/{{game.id}}">{{game.name}}</a>
+                        <a ng-href="/game/{{game._id}}">{{game.name}}</a>
                     </h3>
                     <div class="am-list-item-text">
                         <i class="am-icon-star5"></i>

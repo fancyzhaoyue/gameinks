@@ -5,18 +5,17 @@
         $scope.get2SVR('/api/games', function(data){
             $scope.games = data;
         });
+
+        // 此代码需要优化 
         $('.am-slider-manual').flexslider();
     }]).controller('gameDetailCtrl', ['$rootScope', '$scope', '$routeParams', function($rootScope, $scope, $routeParams){
-        $rootScope.global.title = '墨水游戏';
         $rootScope.global.hasGoback = true;
-        $rootScope.get2SVR('/data/games.json', function(data){
-            data.forEach(function(game){
-                if(game.id = $routeParams.id){
-                    $scope.game = game;
-                    $rootScope.global.title = game.name
-                }
-            })
+        $rootScope.get2SVR('/api/games/' + $routeParams.gameId, function(data){
+            $scope.game = data;
+            $rootScope.global.title = $scope.game.name;
         });
+
+        // 此代码需要优化 
         $('.am-slider-manual').flexslider();
     }]).controller('rankCtrl', ['$rootScope', '$scope', '$routeParams', function($rootScope, $scope, $routeParams){
         console.log($routeParams.categoryId)
@@ -38,7 +37,7 @@
     }]);
 }();
 
-var initOuterApp = function(){
+var initApp = function(){
     var vx = window.vx || {};
     vx.version = '0.0.1';
     var modules = ['ngRoute', 'vx.controller'];
@@ -46,7 +45,7 @@ var initOuterApp = function(){
         $routeProvider.when('/',{
             templateUrl:'/views/home.html',
             controller:'homeCtrl'
-        }).when('/game/:id',{
+        }).when('/game/:gameId',{
             templateUrl:'/views/gameDetail.html',
             controller:'gameDetailCtrl'
         }).when('/rank',{
@@ -76,7 +75,12 @@ var initOuterApp = function(){
         // API get
         $rootScope.get2SVR = function(url, callback, failback){
             $http.get(url).success(function(data ,status, headers, config){
-                angular.isFunction(callback) && callback(data);
+                if(data.retcode == 200){
+                    angular.isFunction(callback) && callback(data.data);
+                }else{
+                    console.log(data.retcode + ":" + data.errmsg);
+                }
+                
             }).error(function(data ,status, headers, config){
                 angular.isFunction(failback) && failback(data);
             })
@@ -85,10 +89,28 @@ var initOuterApp = function(){
         // API post
         $rootScope.post2SVR = function(url, postData, callback, failback){
             $http.post(url, postData).success(function(data ,status, headers, config){
+                angular.isFunction(callback) && callback(data.data);
+            }).error(function(data ,status, headers, config){
+                angular.isFunction(failback) && failback(data);
+            })
+        };
+
+        // API put
+        $rootScope.put2SVR = function(url, putData, callback, failback){
+            $http.put(url, putData).success(function(data ,status, headers, config){
                 angular.isFunction(callback) && callback(data);
             }).error(function(data ,status, headers, config){
                 angular.isFunction(failback) && failback(data);
             })
-        }
+        };
+
+        // API delete
+        $rootScope.del2SVR = function(url, callback, failback){
+            $http.delete(url).success(function(data ,status, headers, config){
+                angular.isFunction(callback) && callback(data);
+            }).error(function(data ,status, headers, config){
+                angular.isFunction(failback) && failback(data);
+            })
+        };
     }])
 };
