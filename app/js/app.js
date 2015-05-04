@@ -15,6 +15,10 @@
             $rootScope.global.title = $scope.game.name;
         });
 
+        $scope.play = function(){  
+            window.location.href = 'http://192.168.1.102/games/' + $scope.game._id;
+        }
+
         // 此代码需要优化 
         $('.am-slider-manual').flexslider();
     }]).controller('rankCtrl', ['$rootScope', '$scope', '$routeParams', function($rootScope, $scope, $routeParams){
