@@ -13,8 +13,10 @@ mongoose.connect(config.db.url, config.db.options, function(err){
     }
 });
 
+require('./user');
 require('./game');
 require('./category');
 
+exports.User = mongoose.model('User');
 exports.Game = mongoose.model('Game');
 exports.Category = mongoose.model('Category');

@@ -108,6 +108,9 @@ var initApp = function(){
     }).when('/category',{
       templateUrl:'/views/category.html',
       controller:'cateCtrl'
+    }).when('/user',{
+      templateUrl:'/views/category.html',
+      controller:'cateCtrl'
     }).otherwise({
       redirectTo: '/'
     });
