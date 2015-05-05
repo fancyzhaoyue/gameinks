@@ -23,19 +23,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.use(function (req, res, next) {
-    if(req.path.indexOf('/api') < 0){
-		res.sendFile(path.join(__dirname, 'app/index.html'));
-    }else{
-    	next();
-    }
-});
-
 // 路由配置
-app.use('/', webRouter);
 app.use('/api', apiRouter);
+app.use('/*', webRouter);
 
 // 服务器启动
- app.listen(3000, function(){
-    console.log('HTTP Server is running at port 3000.');
- });
+app.listen(3000, function(){
+  console.log('HTTP Server is running at port 3000.');
+});

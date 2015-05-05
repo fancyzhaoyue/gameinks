@@ -1,44 +1,36 @@
 <div class="am-panel">
-    <div class="gameinfo am-cf">
-        <div class="am-u-sm-3">
-            <a ng-href="{{game.url}}">
-                 <img class="game-icon" ng-src="{{game.icon}}">
-            </a>
-        </div>
-        <div class="am-u-sm-6">
-            <h3 class="game-title">
-                <a href="game-info.html" >{{game.name}}</a>
-            </h3>
-            <div class="am-list-item-text">
-                <i class="am-icon-star5"></i>
-            </div>
-            <div class="am-list-item-text">人气:{{game.playCount}}</div>
-        </div>
-        <div class="am-u-sm-3 game-fn">
-            <button class="am-btn am-btn-secondary am-radius" ng-click="play()">开始</button>
-        </div>
+  <div class="gameinfo am-cf">
+    <div class="am-u-sm-3"><img class="game-icon" ng-src="{{game.icon}}"></div>
+      <div class="am-u-sm-6">
+        <h3 class="game-title">{{game.name}}</h3>
+        <div class="am-list-item-text"><i class="am-icon-star5"></i></div>
+        <div class="am-list-item-text">人气:{{game.playCount}}</div>
+      </div>
+    <div class="am-u-sm-3 game-fn">
+      <button class="am-btn am-btn-secondary am-radius" ng-click="play()">开始</button>
     </div>
+  </div>
 </div>
 
 <div class="am-panel am-panel-secondary">
-    <div class="am-panel-bd gameinfo-detail">
-        <div data-am-widget="slider" class="am-slider am-slider-default am-slider-manual">
-            <ul class="am-slides">
-                <li>
-                  <img src="http://global.bing.com/az/hprichbg/rb/UchisarCastle_EN-US10838608428_1920x1080.jpg">
-                </li>
-                <li>
-                  <img src="http://global.bing.com/az/hprichbg/rb/DumbartonOaksGardens_EN-US12360736195_1920x1080.jpg">
-                </li>
-            </ul>
-        </div>
-        <div class="gameinfo-detail-desc">
-            <h5>游戏简介</h5>
-            <p class="am-list-item-text">{{game.description}}</p>
-            <h5>分享</h5>
-            <a href="" class="am-icon-btn am-primary am-icon-qq"></a>
-            <a href="" class="am-icon-btn am-success am-icon-weixin"></a>
-            <a href="" class="am-icon-btn am-danger  am-icon-weibo"></a>
-        </div>
+  <div class="am-panel-bd gameinfo-detail">
+    <div data-am-widget="slider" class="am-slider am-slider-default am-slider-manual">
+      <ul class="am-slides">
+        <li>
+          <img src="http://global.bing.com/az/hprichbg/rb/UchisarCastle_EN-US10838608428_1920x1080.jpg">
+        </li>
+        <li>
+          <img src="http://global.bing.com/az/hprichbg/rb/DumbartonOaksGardens_EN-US12360736195_1920x1080.jpg">
+        </li>
+      </ul>
     </div>
+    <div class="gameinfo-detail-desc">
+      <h5>游戏简介</h5>
+      <p class="am-list-item-text">{{game.description}}</p>
+      <h5>分享</h5>
+      <a href="" class="am-icon-btn am-primary am-icon-qq"></a>
+      <a href="" class="am-icon-btn am-success am-icon-weixin"></a>
+      <a href="" class="am-icon-btn am-danger  am-icon-weibo"></a>
+    </div>
+  </div>
 </div>

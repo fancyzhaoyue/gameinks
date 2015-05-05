@@ -1,96 +1,42 @@
 <div data-am-widget="tabs" class="am-tabs am-tabs-d2">
-    <ul class="am-tabs-nav am-cf">
-        <li ng-class="{true: 'am-active'}[current_tab == 'hot']">
-            <a href="javascript:;" ng-click="changeTab('hot')">最热</a>
-        </li>
-        <li ng-class="{true: 'am-active'}[current_tab == 'last']">
-            <a href="javascript:;" ng-click="changeTab('last')">最新</a>
-        </li>
-        <li ng-class="{true: 'am-active'}[current_tab == 'recommend']">
-            <a href="javascript:;" ng-click="changeTab('recommend')">推荐</a>
-        </li>
-    </ul>
-    <div class="am-tabs-bd">
-        <div ng-class="'am-tab-panel'+ {true: ' am-active'}[current_tab == 'hot']">
-            <ul class="am-list">
-                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" ng-repeat="game in games">
-                    <div class="am-u-sm-3 am-list-thumb">
-                        <a href="{{game.gameUrl}}">
-                            <img class="game-icon" ng-src="{{game.iconUrl}}">
-                        </a>
-                    </div>
-                    <div class="am-u-sm-7 am-list-main">
-                        <h3 class="am-list-item-hd game-title">
-                            <a href="game-info.html" >{{game.title}}</a>
-                        </h3>
-                        <div class="am-list-item-text">
-                            <i class="am-icon-star5"></i>
-                            <span> 人气:{{game.players}}</span>
-                        </div>
-                        <div class="am-list-item-text">{{game.desc}}</div>
-                    </div>
-                    <div class="am-u-sm-2 game-fn">
-                        <button type="button" class="am-btn am-btn-secondary am-radius">开始</button>
-                    </div>
-                </li>
-            </ul>
-            <div class="am-list-news-ft">
-                <a class="am-list-news-more am-btn am-btn-default " href="###">更多最热游戏 &raquo;</a>
+  <ul class="am-tabs-nav am-cf">
+    <li ng-class="{true: 'am-active'}[currentTab == 'hot']">
+      <a ng-click="changeTab('hot')">最热</a>
+    </li>
+    <li ng-class="{true: 'am-active'}[currentTab == 'last']">
+      <a ng-click="changeTab('last')">最新</a>
+    </li>
+    <li ng-class="{true: 'am-active'}[currentTab == 'recommend']">
+      <a ng-click="changeTab('recommend')">推荐</a>
+    </li>
+  </ul>
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-active">
+      <ul class="am-list">
+        <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" ng-repeat="game in games">
+          <div class="am-u-sm-3 am-list-thumb">
+            <a ng-href="/game/{{game._id}}">
+              <img class="game-icon" ng-src="{{game.icon}}">
+            </a>
+          </div>
+          <div class="am-u-sm-7 am-list-main">
+            <h3 class="am-list-item-hd game-title">
+              <a ng-href="/game/{{game._id}}">{{game.name}}</a>
+            </h3>
+            <div class="am-list-item-text">
+              <i class="am-icon-star5"></i>
+              <span> 人气:{{game.playCount}}</span>
             </div>
-        </div>
-        <div ng-class="'am-tab-panel'+ {true: ' am-active'}[current_tab == 'last']">
-            <ul class="am-list">
-                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" ng-repeat="game in games">
-                    <div class="am-u-sm-3 am-list-thumb">
-                        <a href="{{game.gameUrl}}">
-                            <img class="game-icon" ng-src="{{game.iconUrl}}">
-                        </a>
-                    </div>
-                    <div class="am-u-sm-7 am-list-main">
-                        <h3 class="am-list-item-hd game-title">
-                            <a href="game-info.html" >{{game.title}}</a>
-                        </h3>
-                        <div class="am-list-item-text">
-                            <i class="am-icon-star5"></i>
-                            <span> 人气:{{game.players}}</span>
-                        </div>
-                        <div class="am-list-item-text">{{game.desc}}</div>
-                    </div>
-                    <div class="am-u-sm-2 game-fn">
-                        <button type="button" class="am-btn am-btn-secondary am-radius">开始</button>
-                    </div>
-                </li>
-            </ul>
-            <div class="am-list-news-ft">
-                <a class="am-list-news-more am-btn am-btn-default " href="###">更多最新游戏 &raquo;</a>
-            </div>
-        </div>
-        <div ng-class="'am-tab-panel'+ {true: ' am-active'}[current_tab == 'recommend']">
-            <ul class="am-list">
-                <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" ng-repeat="game in games">
-                    <div class="am-u-sm-3 am-list-thumb">
-                        <a href="{{game.gameUrl}}">
-                            <img class="game-icon" ng-src="{{game.iconUrl}}">
-                        </a>
-                    </div>
-                    <div class="am-u-sm-7 am-list-main">
-                        <h3 class="am-list-item-hd game-title">
-                            <a href="game-info.html" >{{game.title}}</a>
-                        </h3>
-                        <div class="am-list-item-text">
-                            <i class="am-icon-star5"></i>
-                            <span> 人气:{{game.players}}</span>
-                        </div>
-                        <div class="am-list-item-text">{{game.desc}}</div>
-                    </div>
-                    <div class="am-u-sm-2 game-fn">
-                        <button type="button" class="am-btn am-btn-secondary am-radius">开始</button>
-                    </div>
-                </li>
-            </ul>
-            <div class="am-list-news-ft">
-                <a class="am-list-news-more am-btn am-btn-default " href="###">更多推荐游戏 &raquo;</a>
-            </div>
-        </div>
+            <div class="am-list-item-text">{{game.summary}}</div>
+          </div>
+          <div class="am-u-sm-2 game-fn">
+            <button type="button" class="am-btn am-btn-secondary am-radius">开始</button>
+          </div>
+        </li>
+      </ul>
+      <div class="am-list-news-ft" ng-show="hasMore">
+        <a class="am-btn am-btn-default am-btn-block " ng-click="loadMore()">更多游戏 &raquo;</a>
+      </div>
     </div>
+  </div>
 </div>

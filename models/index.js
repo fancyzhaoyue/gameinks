@@ -14,5 +14,7 @@ mongoose.connect(config.db.url, config.db.options, function(err){
 });
 
 require('./game');
+require('./category');
 
 exports.Game = mongoose.model('Game');
+exports.Category = mongoose.model('Category');

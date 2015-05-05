@@ -5,7 +5,7 @@
  */
 var express = require('express');
 var gameCtrl = require('../controllers/game');
-
+var cateCtrl = require('../controllers/category');
 var router = express.Router();
 
 router.get('/', function(req, res){ res.send('<h1>Gameinks API</h1>'); });
@@ -21,6 +21,16 @@ router.route('/games/:gameId')
 	.delete(gameCtrl.delete);
 
 router.param('gameId', gameCtrl.gameById);
+
+// 分类
+router.route('/categories')
+    .get(cateCtrl.list)
+    .post(cateCtrl.create);
+
+router.route('/categories/:categoryId')
+    .get(cateCtrl.show);
+
+router.param('categoryId', cateCtrl.categoryById);
 
 // 正常返回
 router.use(function(req, res, next) {
