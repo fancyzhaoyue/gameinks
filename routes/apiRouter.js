@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var express = require('express');
+var userCtrl = require('../controllers/user');
 var gameCtrl = require('../controllers/game');
 var cateCtrl = require('../controllers/category');
 var router = express.Router();
@@ -27,10 +28,15 @@ router.route('/categories')
     .get(cateCtrl.list)
     .post(cateCtrl.create);
 
-router.route('/categories/:categoryId')
-    .get(cateCtrl.show);
+router.route('/categories/:categoryId').get(cateCtrl.show);
 
 router.param('categoryId', cateCtrl.categoryById);
+
+
+// 用户
+router.route('/user/signin').post(userCtrl.signin);
+router.route('/user/signup').post(userCtrl.signup);
+
 
 // 正常返回
 router.use(function(req, res, next) {
@@ -45,7 +51,7 @@ router.use(function(err, req, res, next){
     console.error('server 500 error:', err);
     res.send({
         retcode: 500,
-        errmsg: '服务器错误'
+        errmsg: err
     });
 })
 

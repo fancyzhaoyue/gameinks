@@ -1,0 +1,19 @@
+<div class="am-g mt10">
+  <div class="am-u-md-8 am-u-sm-centered">
+    <form class="am-form" ng-submit="signin()" novalidate>
+      <fieldset class="am-form-set">
+        <input type="text" ng-model="user.loginName" placeholder="用户名邮箱都认" required>
+        <input type="password" ng-model="user.password" placeholder="密码这个得填写">
+      </fieldset>
+      <p ng-show="global.errmsg"><code>{{global.errmsg}}</code></p>
+      <button type="submit" class="am-btn am-btn-warning am-btn-block">登录</button>
+      <a class="am-btn am-btn-secondary am-btn-block" href="/signup">注册</a>
+    </form>
+    <div class="login3rd">
+      <h4><span>一键登录</span></h4>
+      <a href="" class="am-icon-btn am-primary am-icon-qq"></a>
+      <a href="" class="am-icon-btn am-success am-icon-weixin"></a>
+      <a href="" class="am-icon-btn am-danger  am-icon-weibo"></a>
+    </div>
+  </div>
+</div>
