@@ -35,7 +35,7 @@
     });
 
     $scope.play = function(){  
-      window.location.href = 'http://192.168.1.102/games/' + $scope.game._id;
+      window.location.href = $scope.game.url;
     }
 
     // 此代码需要优化 
