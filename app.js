@@ -4,9 +4,12 @@
  * Module dependencies.
  */
 var path = require('path');
+var logger = require('morgan');
 var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+
+
 
 require('./models');
 var config = require('./config');
@@ -23,12 +26,12 @@ app.use(express.static(path.join(__dirname, 'app')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use(session({
-//   secret: 'gameinks_secret',
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { maxAge: 60 * 1000 }
-// }));
+app.use(session({
+  secret: 'gameinks_secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60 * 60 * 24 * 1000 }
+}));
 
 // 路由配置
 app.use('/api', apiRouter);
